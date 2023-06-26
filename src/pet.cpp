@@ -130,3 +130,11 @@ void Pet::sleep()
 
     std::cout << m_name << " woke up full of energy!!!\nEnergy: " << m_energy << '\n';
 }
+
+void Pet::display_status()
+{
+    std::cout << m_name << " the " << m_type << '\n';
+    std::cout << "Happiness: " << m_happiness << '\n'
+        << "Fullness: " << m_fullness << '\n'
+        << "Energy: " << m_energy << '\n';
+}
