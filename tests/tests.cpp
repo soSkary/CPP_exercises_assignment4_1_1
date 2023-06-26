@@ -7,7 +7,7 @@
 Pet garfield("Cat", "Garfield");
 Pet oscar("Dog", "Oscar");
 
-TEST_CASE("Testing pet creation")
+TEST_CASE("testing pet creation")
 {
     CHECK(garfield.m_type == "Cat");
     CHECK(garfield.m_name == "Garfield");

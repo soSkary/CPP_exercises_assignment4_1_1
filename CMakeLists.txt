@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 set(executable_name pet)
 
-project(Assignment4_1_1 Virtual Pet Simulator)
+project(Assignment4_1_1 DESCRIPTION "Virtual Pet Simulator")
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
