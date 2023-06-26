@@ -35,6 +35,7 @@ struct Pet
     void feed();
     void play();
     void sleep();
+    void display_status();
 };
 
 
