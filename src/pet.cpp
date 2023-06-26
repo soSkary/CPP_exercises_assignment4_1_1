@@ -110,3 +110,23 @@ void Pet::play()
     std::cout << m_name << " played, and is happier than before!\n";
     std::cout << "Happiness: " << m_happiness << "\nEnergy: " << m_energy << '\n';
 }
+
+void Pet::sleep()
+{
+    std::cout << "ZZZzzzZZZzzz... zzzZZZzzzZZZ...\n";
+    //create an int of m_energy
+    int energy{ static_cast<int>(m_energy) };
+
+     //add 3 to energy
+    energy += 3;
+
+    //check that new value is within bounds
+    if (energy + static_cast<int>(m_energy) > static_cast<int>(Status::max_status) - 1)
+    {
+        energy = static_cast<int>(Status::max_status) - 1;
+    }
+    //add new value to m_happiness
+    m_energy = static_cast<Status>(energy);
+
+    std::cout << m_name << " woke up full of energy!!!\nEnergy: " << m_energy << '\n';
+}
