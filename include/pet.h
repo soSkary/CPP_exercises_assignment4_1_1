@@ -4,7 +4,7 @@
 #include <string>
 #include <string_view>
 
-enum Status
+enum class Status
 {
     unbearable,
     very_bad,
@@ -29,6 +29,8 @@ struct Pet
     Status m_energy;
 
     Pet(std::string_view type, std::string_view name);
+
+    void feed();
 };
 
 
