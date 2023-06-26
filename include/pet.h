@@ -19,6 +19,8 @@ enum class Status
     max_status
 };
 
+std::ostream& operator<<(std::ostream& out, Status status);
+
 struct Pet
 {
     std::string m_type;
@@ -31,6 +33,7 @@ struct Pet
     Pet(std::string_view type, std::string_view name);
 
     void feed();
+    void play();
 };
 
 

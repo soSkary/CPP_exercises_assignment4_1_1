@@ -20,9 +20,13 @@ TEST_CASE("Testing feeding")
 {
     Pet unfed_cat{ garfield };
     garfield.feed();
+
     SUBCASE("Happiness increased from feeding")
     {
         CHECK(unfed_cat.m_happiness < garfield.m_happiness);
+        //reset values, for next SUBCASE
+        garfield.m_happiness = Status::neutral;
+        garfield.m_fullness = Status::neutral;
     }
     SUBCASE("Fullness increased from feeding")
     {
@@ -30,19 +34,22 @@ TEST_CASE("Testing feeding")
     }
 }
 
-// TEST_CASE("Testing playing")
-// {
-//     Pet bored_dog{ oscar };
-//     oscar.play();
-//     SUBCASE("Happiness increased from playing")
-//     {
-//         CHECK(bored_dog.m_happiness < oscar.m_happiness);
-//     }
-//     SUBCASE("Energy decreased from playing")
-//     {
-//         CHECK(bored_dog.m_energy > oscar.m_energy);
-//     }
-// }
+TEST_CASE("Testing playing")
+{
+    Pet bored_dog{ oscar };
+    oscar.play();
+    SUBCASE("Happiness increased from playing")
+    {
+        CHECK(bored_dog.m_happiness < oscar.m_happiness);
+        //reset values, for next SUBCASE
+        oscar.m_happiness = Status::neutral;
+        oscar.m_energy = Status::neutral;
+    }
+    SUBCASE("Energy decreased from playing")
+    {
+        CHECK(bored_dog.m_energy > oscar.m_energy);
+    }
+}
 
 // TEST_CASE("Testing sleeping")
 // {
