@@ -51,17 +51,18 @@ TEST_CASE("Testing playing")
     }
 }
 
-// TEST_CASE("Testing sleeping")
-// {
-//     Pet sleepy_cat{ garfield };
-//     Pet sleepy_dog{ oscar };
-//     garfield.sleep();
-//     SUBCASE("Energy increased from sleeping")
-//     {
-//         CHECK(sleepy_cat.m_energy < garfield.m_energy);
-//         CHECK(sleepy_dog.m_energy < oscar.m_energy);
-//     }
-// }
+TEST_CASE("Testing sleeping")
+{
+    Pet sleepy_cat{ garfield };
+    Pet sleepy_dog{ oscar };
+    garfield.sleep();
+    oscar.sleep();
+    SUBCASE("Energy increased from sleeping")
+    {
+        CHECK(sleepy_cat.m_energy < garfield.m_energy);
+        CHECK(sleepy_dog.m_energy < oscar.m_energy);
+    }
+}
 
 // TEST_CASE("Testing saving and loading")
 // {

@@ -34,6 +34,7 @@ struct Pet
 
     void feed();
     void play();
+    void sleep();
 };
 
 
