@@ -31,6 +31,7 @@ struct Pet
     Status m_energy;
 
     Pet(std::string_view type, std::string_view name);
+    Pet(const std::string& type, const std::string& name, const Status happiness, const Status fullness, const Status energy);
 
     void feed();
     void play();

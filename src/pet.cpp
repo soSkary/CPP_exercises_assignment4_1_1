@@ -46,6 +46,14 @@ Pet::Pet(std::string_view type, std::string_view name)
     m_fullness {Status::neutral},
     m_energy {Status::neutral}
 {}
+Pet::Pet(const std::string& type, const std::string& name,
+    const Status happiness, const Status fullness, const Status energy)
+    : m_type{ type },
+    m_name{ name },
+    m_happiness {happiness},
+    m_fullness {fullness},
+    m_energy {energy}
+{}
 
 void Pet::feed()
 {
