@@ -7,7 +7,7 @@
 Pet garfield("Cat", "Garfield");
 Pet oscar("Dog", "Oscar");
 
-TEST_CASE("testing pet creation")
+TEST_CASE("Testing pet creation")
 {
     CHECK(garfield.m_type == "Cat");
     CHECK(garfield.m_name == "Garfield");
@@ -16,13 +16,13 @@ TEST_CASE("testing pet creation")
     
 }
 
-// TEST_CASE("Testing feeding")
-// {
-//     Pet unfed_cat{ garfield };
-//     garfield.feed();
-//     CHECK(unfed_cat.m_happiness < garfield.m_happiness);
-//     CHECK(unfed_cat.m_fullness < garfield.m_fullness);
-// }
+TEST_CASE("Testing feeding")
+{
+    Pet unfed_cat{ garfield };
+    garfield.feed();
+    CHECK(unfed_cat.m_happiness < garfield.m_happiness);
+    CHECK(unfed_cat.m_fullness < garfield.m_fullness);
+}
 
 // TEST_CASE("Testing playing")
 // {
