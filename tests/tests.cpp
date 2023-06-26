@@ -2,6 +2,7 @@
 #include "doctest.h"
 
 #include "pet.h"
+#include "pet_file_operations.h"
 
 
 Pet garfield("Cat", "Garfield");
@@ -64,15 +65,21 @@ TEST_CASE("Testing sleeping")
     }
 }
 
-// TEST_CASE("Testing saving and loading")
-// {
-//     save_pet_to_file(garfield);
-//     save_pet_to_file(oscar);
+TEST_CASE("Testing saving")
+{
+    save_pet_to_file(garfield);
+    save_pet_to_file(oscar);
 
+    Pet unnamed_cat("Cat", "");
+    CHECK_THROWS_AS(save_pet_to_file(unnamed_cat), const std::exception&);
+}
+
+// TEST_CASE("Testing loading")
+// {
 //     Pet loaded_cat{ load_pet_from_file("Garfield") };
 //     Pet loaded_dog{ load_pet_from_file("Oscar") };
 
-//     SUBCASE("Garfield save and load function working as intended")
+//     SUBCASE("Garfield save and load functions working as intended")
 //     {
 //         CHECK(garfield.m_type == loaded_cat.m_type);
 //         CHECK(garfield.m_name == loaded_cat.m_name);
@@ -80,7 +87,7 @@ TEST_CASE("Testing sleeping")
 //         CHECK(garfield.m_fullness == loaded_cat.m_fullness);
 //         CHECK(garfield.m_energy == loaded_cat.m_energy);
 //     }
-//     SUBCASE("Oscar save and laod functions working as intended")
+//     SUBCASE("Oscar save and load functions working as intended")
 //     {
 //         CHECK(oscar.m_type == loaded_dog.m_type);
 //         CHECK(oscar.m_name == loaded_dog.m_name);
