@@ -39,7 +39,7 @@ std::ostream& operator<<(std::ostream& out, Status status)
     return out;
 }
 
-Pet::Pet(std::string_view type, std::string_view name)
+Pet::Pet(const std::string_view type, const std::string_view name)
     : m_type{ type },
     m_name{ name },
     m_happiness {Status::neutral},

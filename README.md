@@ -1,4 +1,10 @@
 # CPP_exercises_assignment4_1_1
+
+!!IMPORTANT !!
+For program to work correctly, it needs to be executed from source folder
+!!          !!
+
+
 Assignment4_1_1 in Brights C++ program
 
 
